@@ -1,1 +1,30 @@
-﻿
+﻿  main.cpp
+E:\GAMES101\GAMES101-homework-2021year-\GAMES101_05\global.hpp(22,28): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+E:\GAMES101\GAMES101-homework-2021year-\GAMES101_05\global.hpp(25,17): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+E:\GAMES101\GAMES101-homework-2021year-\GAMES101_05\global.hpp(55,13): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+E:\GAMES101\GAMES101-homework-2021year-\GAMES101_05\Object.hpp(16,1): warning C4305: “初始化”: 从“double”到“float”截断
+E:\GAMES101\GAMES101-homework-2021year-\GAMES101_05\Object.hpp(16,1): warning C4305: “参数”: 从“double”到“float”截断
+E:\GAMES101\GAMES101-homework-2021year-\GAMES101_05\Scene.hpp(16,30): warning C4305: “参数”: 从“double”到“float”截断
+E:\GAMES101\GAMES101-homework-2021year-\GAMES101_05\Scene.hpp(18,19): warning C4305: “初始化”: 从“double”到“float”截断
+E:\GAMES101\GAMES101-homework-2021year-\GAMES101_05\Triangle.hpp(111,23): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+E:\GAMES101\GAMES101-homework-2021year-\GAMES101_05\Triangle.hpp(112,1): warning C4305: “参数”: 从“double”到“float”截断
+E:\GAMES101\GAMES101-homework-2021year-\GAMES101_05\main.cpp(17,49): warning C4305: “参数”: 从“double”到“float”截断
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(3416,56): warning C4244: “参数”: 从“_Ty”转换到“const float”，可能丢失数据
+          with
+          [
+              _Ty=int
+          ]
+E:\GAMES101\GAMES101-homework-2021year-\GAMES101_05\main.cpp(15): message : 查看对正在编译的函数 模板 实例化“std::unique_ptr<Sphere,std::default_delete<Sphere>> std::make_unique<Sphere,Vector3f,int,0>(Vector3f &&,int &&)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(3416,56): warning C4244: “参数”: 从“_Ty”转换到“const float”，可能丢失数据
+          with
+          [
+              _Ty=double
+          ]
+E:\GAMES101\GAMES101-homework-2021year-\GAMES101_05\main.cpp(19): message : 查看对正在编译的函数 模板 实例化“std::unique_ptr<Sphere,std::default_delete<Sphere>> std::make_unique<Sphere,Vector3f,double,0>(Vector3f &&,double &&)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\include\memory(3416,56): warning C4244: “参数”: 从“_Ty”转换到“float”，可能丢失数据
+          with
+          [
+              _Ty=double
+          ]
+E:\GAMES101\GAMES101-homework-2021year-\GAMES101_05\main.cpp(33): message : 查看对正在编译的函数 模板 实例化“std::unique_ptr<Light,std::default_delete<Light>> std::make_unique<Light,Vector3f,double,0>(Vector3f &&,double &&)”的引用
+  GAMES101_05.vcxproj -> E:\GAMES101\GAMES101-homework-2021year-\x64\Debug\GAMES101_05.exe

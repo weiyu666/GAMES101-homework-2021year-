@@ -3,6 +3,7 @@
 #include "Triangle.hpp"
 #include "Light.hpp"
 #include "Renderer.hpp"
+#include <chrono>
 
 // In the main function of the program, we create the scene (create objects and lights)
 // as well as set the options for the render (image width and height, maximum recursion
@@ -33,7 +34,20 @@ int main()
     scene.Add(std::make_unique<Light>(Vector3f(30, 50, -12), 0.5));    
 
     Renderer r;
+
+    clock_t start1 = clock();
+    auto start = std::chrono::system_clock::now();
     r.Render(scene);
+    auto stop = std::chrono::system_clock::now();
+    clock_t end1 = clock();
+
+
+    std::cout << "Render complete: \n";
+    std::cout << "Time taken: " << std::chrono::duration_cast<std::chrono::hours>(stop - start).count() << " hours\n";
+    std::cout << "          : " << std::chrono::duration_cast<std::chrono::minutes>(stop - start).count() << " minutes\n";
+    std::cout << "          : " << std::chrono::duration_cast<std::chrono::seconds>(stop - start).count() << " seconds\n";
+    // std::cout << "          : " << std::chrono::duration_cast<std::chrono::microseconds>(stop - start).count() * std::chrono::microseconds::period::num / std::chrono::microseconds::period::den << " microseconds\n";
+    std::cout << "Time consuming" << (double)(end1 - start1) / CLOCKS_PER_SEC << "second" << std::endl;
 
     return 0;
 }

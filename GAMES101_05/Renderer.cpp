@@ -208,6 +208,9 @@ Vector3f castRay(
 // primary rays and cast these rays into the scene. The content of the framebuffer is
 // saved to a file.
 // [/comment]
+//要实现光线的生成，注意这里要对应到每个像素。而原Reder()中对应i,j为每个单位高度/宽度，我们要将i,j转化到单位像素上去。
+//原来scene内width应为（0，width - 1），height应为（height - 1, 0）(从左上角开始遍历)，而且在上面我们将scene进行了压缩到了[-1, 1]的范围空间，所以这里i, j也要进行压缩，还原时也要乘上相应系数
+
 void Renderer::Render(const Scene& scene)
 {
     std::vector<Vector3f> framebuffer(scene.width * scene.height);
@@ -228,7 +231,13 @@ void Renderer::Render(const Scene& scene)
             // TODO: Find the x and y positions of the current pixel to get the direction
             // vector that passes through it.
             // Also, don't forget to multiply both of them with the variable *scale*, and
-            // x (horizontal) variable with the *imageAspectRatio*            
+            // x (horizontal) variable with the *imageAspectRatio*  
+
+            /*x = imageAspectRatio *(2*float(i+.5f)/(float)scene.width -1);
+            y = 1-(2 * float(j+ .5f)/ (float)scene.height);*/
+            x = imageAspectRatio * (2 * float(i + 0.5f) / (float)scene.width - 1);
+            y = 1 - (2 * float(j + 0.5f) / float(scene.height));
+            //std::cout << "X:" << x << "----""Y:" << y << std::endl;
 
             Vector3f dir = Vector3f(x, y, -1); // Don't forget to normalize this direction!
             framebuffer[m++] = castRay(eye_pos, dir, scene, 0);
@@ -248,3 +257,6 @@ void Renderer::Render(const Scene& scene)
     }
     fclose(fp);    
 }
+
+
+
