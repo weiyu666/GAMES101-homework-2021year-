@@ -149,7 +149,7 @@ void rst::rasterizer::rasterize_triangle(const Triangle& t) {
     // MSAA 4X 深度：把一个点看成一个格子，判断里面4个小点是否落在三角形内，然后找到其中插值的最小z值，和帧缓冲中的z值进行比较替换即可。
     // MSAA 4X 颜色： 判断有4个小点中有几个小点落入三角形，然后按比例对颜色进行采样即可。
    
-    bool MSAA = false;
+    bool MSAA = true;
     //MSAA 4X
     if (MSAA) {
         // 格子里的细分四个小点坐标
